@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include<climits>
 using namespace std;
 
 struct Node  
@@ -23,6 +24,7 @@ bool childrenSum(Node* root){
 
     return (root->key==sum && childrenSum(root->left) && childrenSum(root->right));
 }
+
 int main() {
 	
 	Node *root=new Node(20);
@@ -32,4 +34,5 @@ int main() {
 	root->right->right=new Node(9);
 	
 	cout<<childrenSum(root);
+    
 }

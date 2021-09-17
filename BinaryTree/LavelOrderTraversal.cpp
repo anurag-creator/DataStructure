@@ -16,6 +16,7 @@ void printLevel(Node *root){
     if(root==NULL)return;
     queue<Node *>q;
     q.push(root);
+    cout<<endl;
     while(q.empty()==false){
         Node *curr=q.front();
         q.pop();
@@ -26,7 +27,6 @@ void printLevel(Node *root){
             q.push(curr->right);
     }
 }  
-
 int main() {
 	
 	Node *root=new Node(10);
@@ -38,4 +38,5 @@ int main() {
 	root->right->right=new Node(70);
 	
 	printLevel(root);
+	
 }

@@ -14,9 +14,8 @@ struct Node
 
 int FindSize(Node* root){
      if(root==0)return 0;
-    
-         else{
-             return 1+FindSize(root->left)+FindSize(root->right);
+     else{
+            return 1+FindSize(root->left)+FindSize(root->right);
          }
 }
 
