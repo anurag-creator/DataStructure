@@ -1,6 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+//Recursive
+bool isSubSeqRec(string s1,string s2,int n, int m){
+    if(n==0)return true;
+    if(m==0)return true;
+    if(s1[n-1]==s2[m-1]){
+        return isSubSeqRec(s1,s2,n-1,m-1);
+    }
+    return isSubSeqRec(s1,s2,n-1,m);
+}
+//Iterativaly
 bool isSubSeq(string s1, string s2, int n, int m){
     int j = 0;
     
