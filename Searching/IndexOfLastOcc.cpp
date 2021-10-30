@@ -13,7 +13,7 @@ int IndexOfLastOcc(int *arr,int n,int x){
             start=mid-1;
         }
         else{
-            if(mid==0 || arr[mid + 1] != arr[mid] )
+            if(mid==n-1 || arr[mid + 1] != arr[mid] )
                 return mid;
             else
                 start=mid+1;
@@ -22,7 +22,7 @@ int IndexOfLastOcc(int *arr,int n,int x){
     return -1;
 }
 int main(){
-    int arr[]={10,20,30},n=3;
+    int arr[]={20,20,20,20,20,20,20,20,20,20,20,20},n=12;
     int x=20;
     cout<<IndexOfLastOcc(arr,n,x);
 }
