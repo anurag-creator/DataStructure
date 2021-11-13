@@ -19,7 +19,20 @@ int maxInBinaryTree(Node* root){
         return max(root->key,max(maxInBinaryTree(root->left),maxInBinaryTree(root->right)));
     }
 }
-
+int maxInBinaryTree2(Node* root){
+    if(root==NULL)
+         return INT_MIN;
+    int max=root->key;
+    int lmax=maxInBinaryTree2(root->left);
+    int rmax=maxInBinaryTree2(root->right);
+    if(lmax>max){
+        max=lmax;
+    }
+    if(rmax>max){
+        max=rmax;
+    }
+    return max;
+}   
 int main() {
 	
 	Node *root=new Node(10);
@@ -30,5 +43,5 @@ int main() {
 	root->right->left=new Node(60);
 	root->right->right=new Node(70);
 	
-	cout<<maxInBinaryTree(root);
+	cout<<maxInBinaryTree2(root);
 }
