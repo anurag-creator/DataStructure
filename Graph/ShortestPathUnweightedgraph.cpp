@@ -16,10 +16,10 @@ void BFS(vector<int> adj[], int V, int s,int dist[])
 	{ 
 		int u = q.front(); 
 		q.pop();
-		 
+		 //Traverse its adjacent 
 		for(int v:adj[u]){
 		    if(visited[v]==false){
-		        dist[v]=dist[u]+1;
+		        dist[v]=dist[u]+1;//update its distances
 		        visited[v]=true;
 		        q.push(v);
 		    }
