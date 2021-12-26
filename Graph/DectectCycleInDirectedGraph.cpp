@@ -1,8 +1,7 @@
 #include<bits/stdc++.h> 
 using namespace std;
 
-bool DFSRec(vector<int> adj[], int s,bool visited[], bool recSt[]) 
-{ 	
+bool DFSRec(vector<int> adj[], int s,bool visited[], bool recSt[]) { 	
     visited[s]=true;
     recSt[s]=true;
     
@@ -48,7 +47,7 @@ int main()
 	if(DFS(adj,V))
 	    cout<<"Cycle found";
 	else
-	    cout<<"No cycle found";
+	    cout<<"No Cycle found";
 
 	return 0; 
 } 
