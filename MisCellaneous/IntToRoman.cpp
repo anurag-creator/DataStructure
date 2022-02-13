@@ -1,10 +1,10 @@
 class Solution {
 public:
     string intToRoman(int num) {
-        string str_roman[]={"M","D","C","L","X","V","I"};
-        int value[]={1000,500,100,50,10,5,1};
+        string str_roman[]={"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+        int value[]={1000,900,500,400,100,90,50,40,10,9,5,4,1};
         string result="";
-        for(auto int i=0;i<7;i++){
+        for(auto int i=0;i<13;i++){
             while(num-value[i]>=0){
                 result+=str_roman[i];
                 num-=value[i];
