@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+//Naive approach 
+//complexity n^2
 void stockSpan(int *arr,int n){
     
     for(int i=0;i<n;i++){
@@ -10,6 +13,23 @@ void stockSpan(int *arr,int n){
         cout<<span<<" ";
     }
 }
+
+//Efficient Solution
+
+void stockSpan2(int *arr,int n){
+    stack<int>s;
+    s.push(0);
+    cout<<"1"<<" ";   //For left most element
+    for(int i=1;i<n;i++){
+        while(s.empty()==false && (arr[s.top()]<=arr[i])){
+            s.pop();
+        }
+        int span=s.empty() ? i+1 : i-s.top();
+        cout<<span<<" ";
+        s.push(i);
+    }
+
+}
 int main(){
     int n;
     cin>>n;
@@ -17,5 +37,5 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    stockSpan(arr,n);
+    stockSpan2(arr,n);
 }
