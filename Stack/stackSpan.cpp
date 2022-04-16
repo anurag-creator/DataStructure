@@ -15,7 +15,7 @@ void stockSpan(int *arr,int n){
 }
 
 //Efficient Solution
-
+//0(N)
 void stockSpan2(int *arr,int n){
     stack<int>s;
     s.push(0);

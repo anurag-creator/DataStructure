@@ -12,7 +12,8 @@ struct MyStack{
     
     void push(int x){
         if(top==cap-1){
-            cout<<"Stack is full"<<endl;return;
+            cout<<"Stack is full"<<endl;
+            return;
         }
         top++;
         arr[top]=x;
@@ -20,7 +21,8 @@ struct MyStack{
     
     int pop(){
         if(top==-1){
-            cout<<"Stack is Empty"<<endl;return INT_MIN;
+            cout<<"Stack is Empty"<<endl;
+            return INT_MIN;
         }
         int res=arr[top];
         top--;
@@ -28,7 +30,9 @@ struct MyStack{
     }
     
     int peek(){
-        if(top==-1){cout<<"Stack is Empty"<<endl;return INT_MIN;}
+        if(top==-1){
+            cout<<"Stack is Empty"<<endl;
+            return INT_MIN;}
         return arr[top];
     }
     
