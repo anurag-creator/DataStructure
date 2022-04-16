@@ -19,6 +19,20 @@ void PreviousGreterElement(int *arr,int n){
         }
     }
 }
+
+//Efficient Approach
+void PreviousGreterElement2(int *arr,int n){
+   stack<int>s;
+   s.push(arr[0]);
+   for(int i=0;i<n;i++){
+       while(s.empty()==false && s.top()<=arr[i]){
+           s.pop();
+       }
+       int prevGret=s.empty()?-1:s.top();
+       cout<<prevGret<<" ";
+       s.push(arr[i]);
+   }
+}
 int main(){
     int n;
     cin>>n;
@@ -26,5 +40,5 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
-    PreviousGreterElement(arr,n);
+    PreviousGreterElement2(arr,n);
 }
