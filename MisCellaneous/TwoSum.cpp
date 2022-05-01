@@ -1,24 +1,38 @@
+//Navive Solution
+//Order of(n^2)
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& numbers, int target) {
-        vector<int>res;
-        int start=0,end=numbers.size()-1;
-        while(start<=end){
-            if(numbers[start]+numbers[end]==target){
-                res.push_back(start+1);
-                res.push_back(end+1);
-                return res;
-            }/*
-            else if(numbers[start]+numbers[end]>target){
+    vector<int> twoSum(vector<int>& nums, int target) {
+        for(int i=0;i<nums.size();i++){
+            for(int j=i+1;j<nums.size();j++){
+                if(nums[i]+nums[j]==target){
+                    return {i,j};
+                }
+            }
+        }
+        return {};
+    }
+};
+
+//Naive Approach 2
+//Order(N)
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       int start=0,end=nums.size()-1;
+        int tempSum=0;
+        while(start<end){
+            tempSum=nums[start]+nums[end];
+            if(tempSum=target){
+                return {start,end};
+            }
+            if(tempSum>target){
                 end--;
             }
             else{
                 start++;
-            }*/
-            else{
-                numbers[start]+numbers[end]>target?end--:start++;
             }
         }
-        return res;
+        return {-1,-1};
     }
 };
