@@ -1,5 +1,6 @@
 #include<iostream>
 #include<bits/stdc++.h>
+#include<unordered_set>
 using namespace std;
 //Method 1
 void MoveAllNegativePossitive(int *arr,int n){
@@ -32,6 +33,29 @@ void PossitiveNegativePair(int *arr,int n){
         cout<<"No Pair Found"<<endl;
     }
 }
+//Method 3
+//using hashmap
+//Complexity O(N)
+void PossitiveNegativePair2(int *arr,int n){
+    unordered_set<int>pair;
+    bool existPair=false;
+    for(int i=0;i<n;i++){
+        if(arr[i]>0){
+            pair.insert(arr[i]);
+        }
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]<0){
+            if(pair.find(-arr[i])!=pair.end()){
+                cout<<arr[i]<<" "<<-arr[i]<<endl;
+                existPair=true;
+            }
+        }
+    }
+    if(existPair==false){
+        cout<<"No Pair Exist"<<endl;
+    }
+}
 int main(){
     int n;
     cin>>n;
@@ -40,5 +64,5 @@ int main(){
         cin>>arr[i];
     }
     //MoveAllNegativePossitive(arr,n);
-    PossitiveNegativePair(arr,n);
+    PossitiveNegativePair2(arr,n);
 }
